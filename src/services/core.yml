@@ -1,0 +1,10 @@
+parameters:
+    nw_common_contexts.parameters: ~
+
+services:
+    nw_common_contexts.context.initializer:
+        class: Novaway\CommonContexts\Context\Initializer\ContextAwareInitializer
+        arguments:
+            - %nw_common_contexts.parameters%
+        tags:
+            - { name: behat.context.initializer }

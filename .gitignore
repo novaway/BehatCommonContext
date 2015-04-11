@@ -1,0 +1,5 @@
+behat.yml
+bin/
+composer.lock
+vendor
+nw_common_contexts.phar

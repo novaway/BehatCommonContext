@@ -1,0 +1,10 @@
+default:
+    extensions:
+        Behat\MinkExtension\Extension:
+            base_url:   http://localhost:8000
+            files_path: fixtures/files
+            goutte:     ~
+            selenium2:  ~
+        Novaway\CommonContexts\Extension:
+            contexts:
+                select2: ~

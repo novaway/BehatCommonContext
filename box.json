@@ -1,0 +1,7 @@
+{
+    "directories": ["i18n", "src"],
+    "files": ["LICENSE"],
+    "main": "bin/main",
+    "output": "nw_common_contexts.phar",
+    "stub": "bin/stub.php"
+}
