@@ -19,3 +19,9 @@ Fonctionnalité: Select2 Feature
     Scénario:
         Etant donné je suis sur "/select2.html"
         Alors je remplis le champs select2 "select_number" avec "T" et sélectionne "Three"
+
+    @javascript
+    Scénario:
+        Etant donné je suis sur "/select2.html"
+        Lorsque je remplis le champs de recherche select2 "select_number" avec "F"
+        Alors je devrais voir 2 éléments dans le champs select2 "select_number"

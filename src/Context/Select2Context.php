@@ -21,6 +21,19 @@ class Select2Context extends BaseContext
     }
 
     /**
+     * Fill Select2 input field
+     *
+     * @When /^(?:|I )fill in select2 input "(?P<field>(?:[^"]|\\")*)" with "(?P<value>(?:[^"]|\\")*)"$/
+     */
+    public function iFillInSelect2InputWith($field, $value)
+    {
+        $page = $this->getSession()->getPage();
+
+        $this->openField($page, $field);
+        $this->fillSearchField($page, $value);
+    }
+
+    /**
      * Fill Select2 input field and select a value
      *
      * @When /^(?:|I )fill in select2 input "(?P<field>(?:[^"]|\\")*)" with "(?P<value>(?:[^"]|\\")*)" and select "(?P<entry>(?:[^"]|\\")*)"$/
@@ -32,6 +45,18 @@ class Select2Context extends BaseContext
         $this->openField($page, $field);
         $this->fillSearchField($page, $value);
         $this->selectValue($page, $entry);
+    }
+
+    /**
+     * Fill Select2 input field
+     *
+     * @Then /^(?:|I )should see (?P<num>\d+) choice(?:|s) in select2 "(?P<field>(?:[^"]|\\")*)"$/
+     */
+    public function iShouldSeeSelectChoices($field, $num)
+    {
+        $selector = sprintf('#select2-%s-results li', $field);
+
+        $this->assertSession()->elementsCount('css', $selector, intval($num));
     }
 
     /**

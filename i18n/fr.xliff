@@ -8,6 +8,11 @@
                 <target><![CDATA[/^(?:|je )remplis le champs select2 "(?P<field>(?:[^"]|\\")*)" avec "(?P<value>(?:[^"]|\\")*)" et sélectionne "(?P<entry>(?:[^"]|\\")*)"$/]]></target>
             </trans-unit>
 
+            <trans-unit id="i-fill-in-select2-input-with">
+                <source><![CDATA[/^(?:|I )fill in select2 input "(?P<field>(?:[^"]|\\")*)" with "(?P<value>(?:[^"]|\\")*)"$/]]></source>
+                <target><![CDATA[/^(?:|je )remplis le champs de recherche select2 "(?P<field>(?:[^"]|\\")*)" avec "(?P<value>(?:[^"]|\\")*)"$/]]></target>
+            </trans-unit>
+
             <trans-unit id="i-fill-in-select2-field-with">
                 <source><![CDATA[/^(?:|I )fill in select2 "(?P<field>(?:[^"]|\\")*)" with "(?P<value>(?:[^"]|\\")*)"$/]]></source>
                 <target><![CDATA[/^(?:|je )remplis le champs select2 "(?P<field>(?:[^"]|\\")*)" avec "(?P<value>(?:[^"]|\\")*)"$/]]></target>
@@ -16,6 +21,11 @@
             <trans-unit id="i-fill-in-select2-field-for">
                 <source><![CDATA[/^(?:|I )fill in select2 "(?P<value>(?:[^"]|\\")*)" for "(?P<field>(?:[^"]|\\")*)"$/]]></source>
                 <target><![CDATA[/^(?:|je )remplis le champs select2 "(?P<value>(?:[^"]|\\")*)" pour "(?P<field>(?:[^"]|\\")*)"$/]]></target>
+            </trans-unit>
+
+            <trans-unit id="i-should-see-select-choices">
+                <source><![CDATA[/^(?:|I )should see (?P<num>\d+) choice(?:|s) in select2 "(?P<field>(?:[^"]|\\")*)"$/]]></source>
+                <target><![CDATA[/^(?:|je )devrais voir (?P<num>\d+) éléments dans le champs select2 "(?P<field>(?:[^"]|\\")*)"$/]]></target>
             </trans-unit>
         </body>
     </file>
