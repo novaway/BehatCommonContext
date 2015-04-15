@@ -97,6 +97,8 @@ class Select2Context extends BaseContext
             throw new \Exception('No input found');
         }
         $select2Input->setValue($value);
+
+        $this->getSession()->wait(10000, '(0 === jQuery.active)');
     }
 
     /**
