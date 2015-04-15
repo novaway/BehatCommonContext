@@ -1,6 +1,8 @@
 Behat Common Contexts
 =====================
 
+[![Build Status](https://travis-ci.org/novaway/BehatCommonContext.svg)](https://travis-ci.org/novaway/BehatCommonContext)
+
 # /!\ This extension is under development. Behat3 is not actually supported. /!\
 
 Provide most common behat tests.
