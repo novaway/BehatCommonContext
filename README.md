@@ -2,6 +2,7 @@ Behat Common Contexts
 =====================
 
 [![Build Status](https://travis-ci.org/novaway/BehatCommonContext.svg)](https://travis-ci.org/novaway/BehatCommonContext)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/novaway/BehatCommonContext/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/novaway/BehatCommonContext/?branch=master)
 
 # /!\ This extension is under development. Behat3 is not actually supported. /!\
 
