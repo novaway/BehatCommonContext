@@ -2,51 +2,51 @@
 
 namespace Novaway\CommonContexts;
 
-use Symfony\Component\Config\FileLocator;
-use Behat\Behat\Extension\ExtensionInterface;
-use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
+use Behat\Behat\Context\ServiceContainer\ContextExtension;
+use Behat\Testwork\ServiceContainer\Extension as ExtensionInterface;
+use Behat\Testwork\ServiceContainer\ExtensionManager;
 use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
+use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\DependencyInjection\Definition;
 
 class Extension implements ExtensionInterface
 {
     /**
      * {@inheritdoc}
      */
-    public function load(array $config, ContainerBuilder $container)
+    public function getConfigKey()
     {
-        $loader = new YamlFileLoader($container, new FileLocator(__DIR__.'/services'));
-        $loader->load('core.yml');
-
-        $container->setParameter('nw_common_contexts.parameters', $config);
+        return 'nwcontext';
     }
 
     /**
      * {@inheritdoc}
      */
-    public function getConfig(ArrayNodeDefinition $builder)
+    public function load(ContainerBuilder $container, array $config)
     {
-        $builder
-            ->children()
-                ->arrayNode('contexts')
-                    ->isRequired()
-                    ->children()
-                        ->arrayNode('select2')
-                            ->children()
-                                ->scalarNode('enable')->defaultTrue()->end()
-                            ->end()
-                        ->end()
-                    ->end()
-                ->end()
-            ->end()
-        ;
+        $definition = new Definition('Novaway\CommonContexts\Context\ContextClass\ClassResolver');
+        $definition->addTag(ContextExtension::CLASS_RESOLVER_TAG);
+        $container->setDefinition('nw_common_contexts.class_resolver', $definition);
     }
 
     /**
      * {@inheritdoc}
      */
-    public function getCompilerPasses()
+    public function initialize(ExtensionManager $extensionManager)
     {
-        return [];
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function process(ContainerBuilder $container)
+    {
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function configure(ArrayNodeDefinition $builder)
+    {
     }
 }
