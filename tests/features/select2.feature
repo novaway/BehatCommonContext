@@ -12,7 +12,7 @@ Feature: Select2 Feature
     @javascript
     Scenario:
         Given I am on "/select2.html"
-        Then I fill in select2 "One" for "select_number"
+        Then I fill in select2 "Two" for "select_number"
 
     @javascript
     Scenario:
