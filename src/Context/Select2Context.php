@@ -87,16 +87,25 @@ class Select2Context extends BaseContext
      *
      * @param DocumentElement $page
      * @param string          $value
-     * @throws \Behat\Mink\Exception\ElementException
      * @throws \Exception
      */
     private function fillSearchField(DocumentElement $page, $value)
     {
-        $select2Input = $page->find('css', '.select2-search__field');
-        if (!$select2Input) {
-            throw new \Exception('No input found');
+        $driver = $this->getSession()->getDriver();
+        if ('Behat\Mink\Driver\Selenium2Driver' === get_class($driver)) {
+            // Can't use `$this->getSession()->getPage()->find()` because of https://github.com/minkphp/MinkSelenium2Driver/issues/188
+            $select2Input = $this->getSession()->getDriver()->getWebDriverSession()->element('xpath', "//html/descendant-or-self::*[@class and contains(concat(' ', normalize-space(@class), ' '), ' select2-search__field ')]");
+            if (!$select2Input) {
+                throw new \Exception('No input found');
+            }
+            $select2Input->postValue(['value' => [$value]]);
+        } else {
+            $select2Input = $page->find('css', '.select2-search__field');
+            if (!$select2Input) {
+                throw new \Exception('No input found');
+            }
+            $select2Input->setValue($value);
         }
-        $select2Input->setValue($value);
 
         $this->getSession()->wait(10000, '(0 === jQuery.active)');
     }

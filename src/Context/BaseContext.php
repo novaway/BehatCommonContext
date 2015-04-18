@@ -2,15 +2,15 @@
 
 namespace Novaway\CommonContexts\Context;
 
-use Behat\Behat\Context\TranslatedContextInterface;
+use Behat\Behat\Context\TranslatableContext;
 use Behat\MinkExtension\Context\RawMinkContext;
 
-abstract class BaseContext extends RawMinkContext implements TranslatedContextInterface
+abstract class BaseContext extends RawMinkContext implements TranslatableContext
 {
     /**
      * {@inheritdoc}
      */
-    public function getTranslationResources()
+    public static function getTranslationResources()
     {
         return glob(__DIR__ . '/../../i18n/*.xliff');
     }

@@ -13,7 +13,7 @@ Fonctionnalité: Select2 Feature
     @javascript
     Scénario:
         Etant donné je suis sur "/select2.html"
-        Alors je remplis le champs select2 "One" pour "select_number"
+        Alors je remplis le champs select2 "Two" pour "select_number"
 
     @javascript
     Scénario:
