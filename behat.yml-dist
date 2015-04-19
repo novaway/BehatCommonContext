@@ -5,6 +5,7 @@ default:
                 - %paths.base%/tests/features
             contexts:
                 - Behat\MinkExtension\Context\MinkContext
+                - nwcontext:form
                 - nwcontext:select2
 
     extensions:
