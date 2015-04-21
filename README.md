@@ -22,6 +22,7 @@ default:
     suites:
         default:
             contexts:
+                - nwcontext:form
                 - nwcontext:select2
 
     # ...
