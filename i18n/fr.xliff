@@ -27,6 +27,17 @@
                 <source><![CDATA[/^(?:|I )should see (?P<num>\d+) choice(?:|s) in select2 "(?P<field>(?:[^"]|\\")*)"$/]]></source>
                 <target><![CDATA[/^(?:|je )devrais voir (?P<num>\d+) éléments dans le champs select2 "(?P<field>(?:[^"]|\\")*)"$/]]></target>
             </trans-unit>
+
+            <!-- FormContext.php -->
+            <trans-unit id="i-fill-in-field-without-loosing-focus-with">
+                <source><![CDATA[/^(?:|I )fill in "(?P<field>(?:[^"]|\\")*)" with "(?P<value>(?:[^"]|\\")*)" without loosing focus$/]]></source>
+                <target><![CDATA[/^(?:|je )remplis "(?P<field>(?:[^"]|\\")*)" avec "(?P<value>(?:[^"]|\\")*)" sans perdre le focus$/]]></target>
+            </trans-unit>
+
+            <trans-unit id="i-fill-in-field-without-loosing-focus-for">
+                <source><![CDATA[/^(?:|I )fill in "(?P<value>(?:[^"]|\\")*)" for "(?P<field>(?:[^"]|\\")*)" without loosing focus$/]]></source>
+                <target><![CDATA[/^(?:|je )remplis "(?P<value>(?:[^"]|\\")*)" pour "(?P<field>(?:[^"]|\\")*)" sans perdre le focus$/]]></target>
+            </trans-unit>
         </body>
     </file>
 </xliff>
