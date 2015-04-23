@@ -22,3 +22,7 @@ before_script:
 
 script:
     - ./bin/behat -fprogress
+
+    - ./bin/box build
+    - sed -i 's/Novaway\\CommonContexts\\Extension/nw_common_contexts.phar/' behat.yml
+    - ./bin/behat -fprogress
