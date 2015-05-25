@@ -72,12 +72,12 @@ class Select2Context extends BaseContext
 
         $inputField = $page->find('css', $fieldName);
         if (!$inputField) {
-            throw new \Exception('No field found');
+            throw new \Exception(sprintf('No field "%s" found', $field));
         }
 
         $choice = $inputField->getParent()->find('css', '.select2-selection');
         if (!$choice) {
-            throw new \Exception('No select2 choice found');
+            throw new \Exception(sprintf('No select2 choice found for "%s"', $field));
         }
         $choice->press();
     }
@@ -96,13 +96,13 @@ class Select2Context extends BaseContext
             // Can't use `$this->getSession()->getPage()->find()` because of https://github.com/minkphp/MinkSelenium2Driver/issues/188
             $select2Input = $this->getSession()->getDriver()->getWebDriverSession()->element('xpath', "//html/descendant-or-self::*[@class and contains(concat(' ', normalize-space(@class), ' '), ' select2-search__field ')]");
             if (!$select2Input) {
-                throw new \Exception('No input found');
+                throw new \Exception(sprintf('No field "%s" found', $field));
             }
             $select2Input->postValue(['value' => [$value]]);
         } else {
             $select2Input = $page->find('css', '.select2-search__field');
             if (!$select2Input) {
-                throw new \Exception('No input found');
+                throw new \Exception(sprintf('No input found for "%s"', $field));
             }
             $select2Input->setValue($value);
         }
@@ -127,6 +127,6 @@ class Select2Context extends BaseContext
             }
         }
 
-        throw new \Exception(sprintf('Value "%s" not found', $value));
+        throw new \Exception(sprintf('Value "%s" not found for "%s"', $value, $field));
     }
 }
