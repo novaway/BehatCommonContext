@@ -6,6 +6,7 @@ default:
             contexts:
                 - Behat\MinkExtension\Context\MinkContext
                 - nwcontext:form
+                - nwcontext:formstone
                 - nwcontext:select2
 
     extensions:

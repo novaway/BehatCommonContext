@@ -38,6 +38,27 @@
                 <source><![CDATA[/^(?:|I )fill in "(?P<value>(?:[^"]|\\")*)" for "(?P<field>(?:[^"]|\\")*)" without loosing focus$/]]></source>
                 <target><![CDATA[/^(?:|je )remplis "(?P<value>(?:[^"]|\\")*)" pour "(?P<field>(?:[^"]|\\")*)" sans perdre le focus$/]]></target>
             </trans-unit>
+
+            <!-- FormstoneContext.php -->
+            <trans-unit id="i-fill-in-selecter-field-with">
+                <source><![CDATA[/^(?:|I )fill in selecter "(?P<field>(?:[^"]|\\")*)" with "(?P<value>(?:[^"]|\\")*)"$/]]></source>
+                <target><![CDATA[/^(?:|je )remplis le champs selecter "(?P<field>(?:[^"]|\\")*)" avec "(?P<value>(?:[^"]|\\")*)"$/]]></target>
+            </trans-unit>
+
+            <trans-unit id="i-fill-in-selecter-field-for">
+                <source><![CDATA[/^(?:|I )fill in selecter "(?P<value>(?:[^"]|\\")*)" for "(?P<field>(?:[^"]|\\")*)"$/]]></source>
+                <target><![CDATA[/^(?:|je )remplis le champs selecter "(?P<value>(?:[^"]|\\")*)" pour "(?P<field>(?:[^"]|\\")*)"$/]]></target>
+            </trans-unit>
+
+            <trans-unit id="i-fill-in-dropdown-field-with">
+                <source><![CDATA[/^(?:|I )fill in dropdown "(?P<field>(?:[^"]|\\")*)" with "(?P<value>(?:[^"]|\\")*)"$/]]></source>
+                <target><![CDATA[/^(?:|je )remplis le champs dropdown "(?P<field>(?:[^"]|\\")*)" avec "(?P<value>(?:[^"]|\\")*)"$/]]></target>
+            </trans-unit>
+
+            <trans-unit id="i-fill-in-dropdown-field-for">
+                <source><![CDATA[/^(?:|I )fill in dropdown "(?P<value>(?:[^"]|\\")*)" for "(?P<field>(?:[^"]|\\")*)"$/]]></source>
+                <target><![CDATA[/^(?:|je )remplis le champs dropdown "(?P<value>(?:[^"]|\\")*)" pour "(?P<field>(?:[^"]|\\")*)"$/]]></target>
+            </trans-unit>
         </body>
     </file>
 </xliff>
