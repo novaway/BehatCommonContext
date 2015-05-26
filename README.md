@@ -30,6 +30,7 @@ default:
         default:
             contexts:
                 - nwcontext:form
+                - nwcontext:formstone
                 - nwcontext:select2
 
     # ...
