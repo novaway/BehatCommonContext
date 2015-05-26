@@ -95,7 +95,7 @@ class FormstoneContext extends BaseContext
                 $choice->click();
                 return;
             }
-        } sleep(5);
+        }
 
         throw new \Exception(sprintf('Value "%s" not found for "%s"', $value, $field));
     }
