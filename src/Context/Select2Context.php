@@ -17,7 +17,7 @@ class Select2Context extends BaseContext
         $page = $this->getSession()->getPage();
 
         $this->openField($page, $field);
-        $this->selectValue($page, $value);
+        $this->selectValue($page, $field, $value);
     }
 
     /**
@@ -30,7 +30,7 @@ class Select2Context extends BaseContext
         $page = $this->getSession()->getPage();
 
         $this->openField($page, $field);
-        $this->fillSearchField($page, $value);
+        $this->fillSearchField($page, $field, $value);
     }
 
     /**
@@ -43,8 +43,8 @@ class Select2Context extends BaseContext
         $page = $this->getSession()->getPage();
 
         $this->openField($page, $field);
-        $this->fillSearchField($page, $value);
-        $this->selectValue($page, $entry);
+        $this->fillSearchField($page, $field, $value);
+        $this->selectValue($page, $field, $entry);
     }
 
     /**
@@ -86,10 +86,11 @@ class Select2Context extends BaseContext
      * Fill Select2 search field
      *
      * @param DocumentElement $page
+     * @param string          $field
      * @param string          $value
      * @throws \Exception
      */
-    private function fillSearchField(DocumentElement $page, $value)
+    private function fillSearchField(DocumentElement $page, $field, $value)
     {
         $driver = $this->getSession()->getDriver();
         if ('Behat\Mink\Driver\Selenium2Driver' === get_class($driver)) {
@@ -114,10 +115,11 @@ class Select2Context extends BaseContext
      * Select value in choice list
      *
      * @param DocumentElement $page
+     * @param string          $field
      * @param string          $value
      * @throws \Exception
      */
-    private function selectValue(DocumentElement $page, $value)
+    private function selectValue(DocumentElement $page, $field, $value)
     {
         $chosenResults = $page->findAll('css', '.select2-results li');
         foreach ($chosenResults as $result) {
