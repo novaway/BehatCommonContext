@@ -37,3 +37,8 @@ Fonctionnalité: Select2 Feature
         Etant donné je suis sur "/select2-multiple.html"
         Alors je remplis le champs select2 "Two" pour "select_number2"
         Et je remplis le champs select2 "Three" pour "select_number2"
+
+    @javascript
+    Scénario:
+        Etant donné je suis sur "/select2-nosearch.html"
+        Alors je remplis le champs select2 "Thirteen" pour "select_number"
