@@ -25,3 +25,15 @@ Fonctionnalité: Select2 Feature
         Etant donné je suis sur "/select2.html"
         Lorsque je remplis le champs de recherche select2 "select_number" avec "F"
         Alors je devrais voir 2 éléments dans le champs select2 "select_number"
+
+    @javascript
+    Scénario:
+        Etant donné je suis sur "/select2-multiple.html"
+        Alors je remplis le champs select2 "Two" pour "select_number"
+        Et je remplis le champs select2 "Three" pour "select_number"
+
+    @javascript
+    Scénario:
+        Etant donné je suis sur "/select2-multiple.html"
+        Alors je remplis le champs select2 "Two" pour "select_number2"
+        Et je remplis le champs select2 "Three" pour "select_number2"

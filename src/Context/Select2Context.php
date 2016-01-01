@@ -68,14 +68,14 @@ class Select2Context extends BaseContext
      */
     private function openField(DocumentElement $page, $field)
     {
-        $fieldName = sprintf('#select2-%s-container', $field);
+        $fieldName = sprintf('select[name="%s"] + .select2-container', $field);
 
         $inputField = $page->find('css', $fieldName);
         if (!$inputField) {
             throw new \Exception(sprintf('No field "%s" found', $field));
         }
 
-        $choice = $inputField->getParent()->find('css', '.select2-selection');
+        $choice = $inputField->find('css', '.select2-selection');
         if (!$choice) {
             throw new \Exception(sprintf('No select2 choice found for "%s"', $field));
         }
