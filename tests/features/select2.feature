@@ -24,3 +24,15 @@ Feature: Select2 Feature
         Given I am on "/select2.html"
         When I fill in select2 input "select_number" with "F"
         Then I should see 2 choice in select2 "select_number"
+
+    @javascript
+    Scenario:
+        Given I am on "/select2-multiple.html"
+        Then I fill in select2 "Two" for "select_number"
+        And I fill in select2 "Three" for "select_number"
+
+    @javascript
+    Scenario:
+        Given I am on "/select2-multiple.html"
+        Then I fill in select2 "Two" for "select_number2"
+        And I fill in select2 "Three" for "select_number2"
