@@ -3,6 +3,7 @@
 namespace Novaway\CommonContexts\Context;
 
 use Behat\Mink\Element\DocumentElement;
+use Behat\Mink\Driver\Selenium2Driver;
 
 class Select2Context extends BaseContext
 {
@@ -93,7 +94,7 @@ class Select2Context extends BaseContext
     private function fillSearchField(DocumentElement $page, $field, $value)
     {
         $driver = $this->getSession()->getDriver();
-        if ('Behat\Mink\Driver\Selenium2Driver' === get_class($driver)) {
+        if ($driver instanceof Selenium2Driver) {
             // Can't use `$this->getSession()->getPage()->find()` because of https://github.com/minkphp/MinkSelenium2Driver/issues/188
             $select2Input = $this->getSession()->getDriver()->getWebDriverSession()->element('xpath', "//html/descendant-or-self::*[@class and contains(concat(' ', normalize-space(@class), ' '), ' select2-search__field ')]");
             if (!$select2Input) {
