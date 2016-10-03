@@ -41,3 +41,8 @@ Feature: Select2 Feature
     Scenario:
         Given I am on "/select2-nosearch.html"
         Then I fill in select2 "Thirteen" for "select_number"
+
+    @javascript
+    Scenario:
+        Given I am on "/select2-ajax.html"
+        Then I fill in select2 "France" for "select_number"

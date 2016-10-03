@@ -1,0 +1,33 @@
+<html>
+<head>
+    <link href="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/css/select2.min.css" rel="stylesheet" />
+    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/select2.min.js"></script>
+</head>
+<body>
+<select id="select_number" name="select_number" style="width: 500px;">
+</select>
+<script type="text/javascript">$('#select_number').select2({
+    ajax: {
+        url: "ajax.php",
+        dataType: 'json',
+        delay: 250,
+        data: function (params) {
+            return {
+                q: params.term, // search term
+                page: params.page
+            };
+        },
+        placeholder: {
+            id: '-1',
+            text: 'Select an option'
+        },
+        processResults: function (data, params) {
+            return {
+                results: data.items
+            };
+        }
+    }
+});</script>
+</body>
+</html>

@@ -108,7 +108,7 @@ class Select2Context extends BaseContext
             $select2Input->setValue($value);
         }
 
-        $this->getSession()->wait(10000, '(0 === jQuery.active)');
+        $this->waitForLoadingResults();
     }
 
     /**
@@ -121,6 +121,8 @@ class Select2Context extends BaseContext
      */
     private function selectValue(DocumentElement $page, $field, $value)
     {
+        $this->waitForLoadingResults();
+
         $chosenResults = $page->findAll('css', '.select2-results li');
         foreach ($chosenResults as $result) {
             if ($result->getText() == $value) {
@@ -130,5 +132,23 @@ class Select2Context extends BaseContext
         }
 
         throw new \Exception(sprintf('Value "%s" not found for "%s"', $value, $field));
+    }
+
+    /**
+     * Wait the end of fetching Select2 results
+     *
+     * @param int $time Time to wait in seconds
+     */
+    private function waitForLoadingResults($time = 60)
+    {
+        for ($i = 0; $i < $time; $i++) {
+            if (!$this->getSession()->getPage()->find('css', '.select2-results__option.loading-results')) {
+                return true;
+            }
+
+            sleep(1);
+        }
+
+        throw new \Exception(sprintf('Results are not load after "%d" seconds.', $time));
     }
 }
