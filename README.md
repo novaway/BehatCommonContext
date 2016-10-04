@@ -31,7 +31,8 @@ default:
             contexts:
                 - nwcontext:form
                 - nwcontext:formstone
-                - nwcontext:select2
+                - nwcontext:select2:
+                    timeout: 60
 
     # ...
     extensions:

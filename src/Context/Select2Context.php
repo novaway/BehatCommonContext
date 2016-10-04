@@ -6,6 +6,21 @@ use Behat\Mink\Element\DocumentElement;
 
 class Select2Context extends BaseContext
 {
+    const DEFAULT_TIMEOUT = 60;
+
+    /** @var int */
+    private $timeout;
+
+    /**
+     * Constructor
+     *
+     * @param int $timeout Timeout for waiting results (in seconds)
+     */
+    public function __construct($timeout = self::DEFAULT_TIMEOUT)
+    {
+        $this->timeout = $timeout;
+    }
+
     /**
      * Fills in Select2 field with specified
      *
@@ -108,7 +123,7 @@ class Select2Context extends BaseContext
             $select2Input->setValue($value);
         }
 
-        $this->waitForLoadingResults();
+        $this->waitForLoadingResults($this->timeout);
     }
 
     /**
@@ -121,7 +136,7 @@ class Select2Context extends BaseContext
      */
     private function selectValue(DocumentElement $page, $field, $value)
     {
-        $this->waitForLoadingResults();
+        $this->waitForLoadingResults($this->timeout);
 
         $chosenResults = $page->findAll('css', '.select2-results li');
         foreach ($chosenResults as $result) {
@@ -139,7 +154,7 @@ class Select2Context extends BaseContext
      *
      * @param int $time Time to wait in seconds
      */
-    private function waitForLoadingResults($time = 60)
+    private function waitForLoadingResults($time)
     {
         for ($i = 0; $i < $time; $i++) {
             if (!$this->getSession()->getPage()->find('css', '.select2-results__option.loading-results')) {
