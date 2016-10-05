@@ -32,7 +32,21 @@ class Select2Context extends BaseContext
         $page = $this->getSession()->getPage();
 
         $this->openField($page, $field);
-        $this->selectValue($page, $field, $value);
+        $this->selectValue($page, $field, $value, $this->timeout);
+    }
+
+    /**
+     * Fills in Select2 field with specified and wait for results
+     *
+     * @When /^(?:|I )fill in select2 "(?P<field>(?:[^"]|\\")*)" with "(?P<value>(?:[^"]|\\")*)" and wait (?P<time>(?:[^"]|\\")*) seconds until results are loaded$/
+     * @When /^(?:|I )fill in select2 "(?P<value>(?:[^"]|\\")*)" for "(?P<field>(?:[^"]|\\")*)" and wait (?P<time>(?:[^"]|\\")*) seconds until results are loaded$/
+     */
+    public function iFillInSelect2FieldWaitUntilResultsAreLoaded($field, $value, $time)
+    {
+        $page = $this->getSession()->getPage();
+
+        $this->openField($page, $field);
+        $this->selectValue($page, $field, $value, $time);
     }
 
     /**
@@ -59,7 +73,7 @@ class Select2Context extends BaseContext
 
         $this->openField($page, $field);
         $this->fillSearchField($page, $field, $value);
-        $this->selectValue($page, $field, $entry);
+        $this->selectValue($page, $field, $entry, $this->timeout);
     }
 
     /**
@@ -132,11 +146,12 @@ class Select2Context extends BaseContext
      * @param DocumentElement $page
      * @param string          $field
      * @param string          $value
+     * @param int             $time
      * @throws \Exception
      */
-    private function selectValue(DocumentElement $page, $field, $value)
+    private function selectValue(DocumentElement $page, $field, $value, $time)
     {
-        $this->waitForLoadingResults($this->timeout);
+        $this->waitForLoadingResults($time);
 
         $chosenResults = $page->findAll('css', '.select2-results li');
         foreach ($chosenResults as $result) {
@@ -158,12 +173,10 @@ class Select2Context extends BaseContext
     {
         for ($i = 0; $i < $time; $i++) {
             if (!$this->getSession()->getPage()->find('css', '.select2-results__option.loading-results')) {
-                return true;
+                return;
             }
 
             sleep(1);
         }
-
-        throw new \Exception(sprintf('Results are not load after "%d" seconds.', $time));
     }
 }
