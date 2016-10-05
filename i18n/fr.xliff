@@ -13,6 +13,16 @@
                 <target><![CDATA[/^(?:|je )remplis le champs de recherche select2 "(?P<field>(?:[^"]|\\")*)" avec "(?P<value>(?:[^"]|\\")*)"$/]]></target>
             </trans-unit>
 
+            <trans-unit id="i-fill-in-select2-input-with-and-select-and-wait">
+                <source><![CDATA[/^(?:|I )fill in select2 "(?P<field>(?:[^"]|\\")*)" with "(?P<value>(?:[^"]|\\")*)" and wait (?P<time>(?:[^"]|\\")*) seconds until results are loaded$/]]></source>
+                <target><![CDATA[/^(?:|je )remplis le champs select2 "(?P<field>(?:[^"]|\\")*)" avec "(?P<value>(?:[^"]|\\")*)" et (?:|j')attends (?P<time>(?:[^"]|\\")*) secondes le chargement des résultats$/]]></target>
+            </trans-unit>
+
+            <trans-unit id="i-fill-in-select2-input-with-and-wait">
+                <source><![CDATA[/^(?:|I )fill in select2 "(?P<value>(?:[^"]|\\")*)" for "(?P<field>(?:[^"]|\\")*)" and wait (?P<time>(?:[^"]|\\")*) seconds until results are loaded$/]]></source>
+                <target><![CDATA[/^(?:|je )remplis le champs select2 "(?P<value>(?:[^"]|\\")*)" pour "(?P<field>(?:[^"]|\\")*)" et (?:|j')attends (?P<time>(?:[^"]|\\")*) secondes le chargement des résultats$/]]></target>
+            </trans-unit>
+
             <trans-unit id="i-fill-in-select2-field-with">
                 <source><![CDATA[/^(?:|I )fill in select2 "(?P<field>(?:[^"]|\\")*)" with "(?P<value>(?:[^"]|\\")*)"$/]]></source>
                 <target><![CDATA[/^(?:|je )remplis le champs select2 "(?P<field>(?:[^"]|\\")*)" avec "(?P<value>(?:[^"]|\\")*)"$/]]></target>

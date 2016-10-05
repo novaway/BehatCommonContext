@@ -46,3 +46,13 @@ Feature: Select2 Feature
     Scenario:
         Given I am on "/select2-ajax.html"
         Then I fill in select2 "France" for "select_number"
+
+    @javascript
+    Scenario:
+        Given I am on "/select2-ajax.html"
+        Then I fill in select2 "France" for "select_number" and wait 6 seconds until results are loaded
+
+    @javascript
+    Scenario:
+        Given I am on "/select2-ajax.html"
+        Then I fill in select2 "select_number" with "France" and wait 6 seconds until results are loaded

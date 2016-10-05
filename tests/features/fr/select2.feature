@@ -47,3 +47,13 @@ Fonctionnalité: Select2 Feature
     Scénario:
         Etant donné je suis sur "/select2-ajax.html"
         Alors je remplis le champs select2 "France" pour "select_number"
+
+    @javascript
+    Scénario:
+        Etant donné je suis sur "/select2-ajax.html"
+        Alors je remplis le champs select2 "France" pour "select_number" et j'attends 6 secondes le chargement des résultats
+
+    @javascript
+    Scénario:
+        Etant donné je suis sur "/select2-ajax.html"
+        Alors je remplis le champs select2 "select_number" avec "France" et j'attends 6 secondes le chargement des résultats
