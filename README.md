@@ -1,7 +1,7 @@
 Behat Common Contexts
 =====================
 
-[![Build Status](https://travis-ci.org/novaway/BehatCommonContext.svg)](https://travis-ci.org/novaway/BehatCommonContext)
+[![Build Status](https://travis-ci.org/novaway/BehatCommonContext.svg?branch=master)](https://travis-ci.org/novaway/BehatCommonContext)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/novaway/BehatCommonContext/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/novaway/BehatCommonContext/?branch=master)
 [![Latest Stable Version](https://poser.pugx.org/novaway/common-contexts/v/stable.png)](https://packagist.org/packages/novaway/common-contexts)
 
