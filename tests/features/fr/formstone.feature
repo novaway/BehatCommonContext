@@ -8,9 +8,9 @@ Fonctionnalité: Formstone Feature
     @javascript
     Scénario:
         Etant donné je suis sur "/formstone.html"
-        Alors je remplis le champs dropdown "select_number" avec "Four"
+        Alors je remplis le champ dropdown "select_number" avec "Four"
 
     @javascript
     Scénario:
         Etant donné je suis sur "/formstone.html"
-        Alors je remplis le champs dropdown "Two" pour "select_number"
+        Alors je remplis le champ dropdown "Two" pour "select_number"

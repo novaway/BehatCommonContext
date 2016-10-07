@@ -5,37 +5,37 @@
             <!-- Select2Context.php -->
             <trans-unit id="i-fill-in-select2-input-with-and-select">
                 <source><![CDATA[/^(?:|I )fill in select2 input "(?P<field>(?:[^"]|\\")*)" with "(?P<value>(?:[^"]|\\")*)" and select "(?P<entry>(?:[^"]|\\")*)"$/]]></source>
-                <target><![CDATA[/^(?:|je )remplis le champs select2 "(?P<field>(?:[^"]|\\")*)" avec "(?P<value>(?:[^"]|\\")*)" et sélectionne "(?P<entry>(?:[^"]|\\")*)"$/]]></target>
+                <target><![CDATA[/^(?:|je )remplis le(?:|s) champ(?:|s) select2 "(?P<field>(?:[^"]|\\")*)" avec "(?P<value>(?:[^"]|\\")*)" et sélectionne "(?P<entry>(?:[^"]|\\")*)"$/]]></target>
             </trans-unit>
 
             <trans-unit id="i-fill-in-select2-input-with">
                 <source><![CDATA[/^(?:|I )fill in select2 input "(?P<field>(?:[^"]|\\")*)" with "(?P<value>(?:[^"]|\\")*)"$/]]></source>
-                <target><![CDATA[/^(?:|je )remplis le champs de recherche select2 "(?P<field>(?:[^"]|\\")*)" avec "(?P<value>(?:[^"]|\\")*)"$/]]></target>
+                <target><![CDATA[/^(?:|je )remplis le(?:|s) champ(?:|s) de recherche select2 "(?P<field>(?:[^"]|\\")*)" avec "(?P<value>(?:[^"]|\\")*)"$/]]></target>
             </trans-unit>
 
             <trans-unit id="i-fill-in-select2-input-with-and-select-and-wait">
                 <source><![CDATA[/^(?:|I )fill in select2 "(?P<field>(?:[^"]|\\")*)" with "(?P<value>(?:[^"]|\\")*)" and wait (?P<time>(?:[^"]|\\")*) seconds until results are loaded$/]]></source>
-                <target><![CDATA[/^(?:|je )remplis le champs select2 "(?P<field>(?:[^"]|\\")*)" avec "(?P<value>(?:[^"]|\\")*)" et (?:|j')attends (?P<time>(?:[^"]|\\")*) secondes le chargement des résultats$/]]></target>
+                <target><![CDATA[/^(?:|je )remplis le(?:|s) champ(?:|s) select2 "(?P<field>(?:[^"]|\\")*)" avec "(?P<value>(?:[^"]|\\")*)" et (?:|j')attends (?P<time>(?:[^"]|\\")*) secondes le chargement des résultats$/]]></target>
             </trans-unit>
 
             <trans-unit id="i-fill-in-select2-input-with-and-wait">
                 <source><![CDATA[/^(?:|I )fill in select2 "(?P<value>(?:[^"]|\\")*)" for "(?P<field>(?:[^"]|\\")*)" and wait (?P<time>(?:[^"]|\\")*) seconds until results are loaded$/]]></source>
-                <target><![CDATA[/^(?:|je )remplis le champs select2 "(?P<value>(?:[^"]|\\")*)" pour "(?P<field>(?:[^"]|\\")*)" et (?:|j')attends (?P<time>(?:[^"]|\\")*) secondes le chargement des résultats$/]]></target>
+                <target><![CDATA[/^(?:|je )remplis le(?:|s) champ(?:|s) select2 "(?P<value>(?:[^"]|\\")*)" pour "(?P<field>(?:[^"]|\\")*)" et (?:|j')attends (?P<time>(?:[^"]|\\")*) secondes le chargement des résultats$/]]></target>
             </trans-unit>
 
             <trans-unit id="i-fill-in-select2-field-with">
                 <source><![CDATA[/^(?:|I )fill in select2 "(?P<field>(?:[^"]|\\")*)" with "(?P<value>(?:[^"]|\\")*)"$/]]></source>
-                <target><![CDATA[/^(?:|je )remplis le champs select2 "(?P<field>(?:[^"]|\\")*)" avec "(?P<value>(?:[^"]|\\")*)"$/]]></target>
+                <target><![CDATA[/^(?:|je )remplis le(?:|s) champ(?:|s) select2 "(?P<field>(?:[^"]|\\")*)" avec "(?P<value>(?:[^"]|\\")*)"$/]]></target>
             </trans-unit>
 
             <trans-unit id="i-fill-in-select2-field-for">
                 <source><![CDATA[/^(?:|I )fill in select2 "(?P<value>(?:[^"]|\\")*)" for "(?P<field>(?:[^"]|\\")*)"$/]]></source>
-                <target><![CDATA[/^(?:|je )remplis le champs select2 "(?P<value>(?:[^"]|\\")*)" pour "(?P<field>(?:[^"]|\\")*)"$/]]></target>
+                <target><![CDATA[/^(?:|je )remplis le(?:|s) champ(?:|s) select2 "(?P<value>(?:[^"]|\\")*)" pour "(?P<field>(?:[^"]|\\")*)"$/]]></target>
             </trans-unit>
 
             <trans-unit id="i-should-see-select-choices">
                 <source><![CDATA[/^(?:|I )should see (?P<num>\d+) choice(?:|s) in select2 "(?P<field>(?:[^"]|\\")*)"$/]]></source>
-                <target><![CDATA[/^(?:|je )devrais voir (?P<num>\d+) éléments dans le champs select2 "(?P<field>(?:[^"]|\\")*)"$/]]></target>
+                <target><![CDATA[/^(?:|je )devrais voir (?P<num>\d+) éléments dans le(?:|s) champ(?:|s) select2 "(?P<field>(?:[^"]|\\")*)"$/]]></target>
             </trans-unit>
 
             <!-- FormContext.php -->
@@ -52,22 +52,22 @@
             <!-- FormstoneContext.php -->
             <trans-unit id="i-fill-in-selecter-field-with">
                 <source><![CDATA[/^(?:|I )fill in selecter "(?P<field>(?:[^"]|\\")*)" with "(?P<value>(?:[^"]|\\")*)"$/]]></source>
-                <target><![CDATA[/^(?:|je )remplis le champs selecter "(?P<field>(?:[^"]|\\")*)" avec "(?P<value>(?:[^"]|\\")*)"$/]]></target>
+                <target><![CDATA[/^(?:|je )remplis le(?:|s) champ(?:|s) selecter "(?P<field>(?:[^"]|\\")*)" avec "(?P<value>(?:[^"]|\\")*)"$/]]></target>
             </trans-unit>
 
             <trans-unit id="i-fill-in-selecter-field-for">
                 <source><![CDATA[/^(?:|I )fill in selecter "(?P<value>(?:[^"]|\\")*)" for "(?P<field>(?:[^"]|\\")*)"$/]]></source>
-                <target><![CDATA[/^(?:|je )remplis le champs selecter "(?P<value>(?:[^"]|\\")*)" pour "(?P<field>(?:[^"]|\\")*)"$/]]></target>
+                <target><![CDATA[/^(?:|je )remplis le(?:|s) champ(?:|s) selecter "(?P<value>(?:[^"]|\\")*)" pour "(?P<field>(?:[^"]|\\")*)"$/]]></target>
             </trans-unit>
 
             <trans-unit id="i-fill-in-dropdown-field-with">
                 <source><![CDATA[/^(?:|I )fill in dropdown "(?P<field>(?:[^"]|\\")*)" with "(?P<value>(?:[^"]|\\")*)"$/]]></source>
-                <target><![CDATA[/^(?:|je )remplis le champs dropdown "(?P<field>(?:[^"]|\\")*)" avec "(?P<value>(?:[^"]|\\")*)"$/]]></target>
+                <target><![CDATA[/^(?:|je )remplis le(?:|s) champ(?:|s) dropdown "(?P<field>(?:[^"]|\\")*)" avec "(?P<value>(?:[^"]|\\")*)"$/]]></target>
             </trans-unit>
 
             <trans-unit id="i-fill-in-dropdown-field-for">
                 <source><![CDATA[/^(?:|I )fill in dropdown "(?P<value>(?:[^"]|\\")*)" for "(?P<field>(?:[^"]|\\")*)"$/]]></source>
-                <target><![CDATA[/^(?:|je )remplis le champs dropdown "(?P<value>(?:[^"]|\\")*)" pour "(?P<field>(?:[^"]|\\")*)"$/]]></target>
+                <target><![CDATA[/^(?:|je )remplis le(?:|s) champ(?:|s) dropdown "(?P<value>(?:[^"]|\\")*)" pour "(?P<field>(?:[^"]|\\")*)"$/]]></target>
             </trans-unit>
         </body>
     </file>
