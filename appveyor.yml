@@ -1,0 +1,56 @@
+build: false
+shallow_clone: true
+platform: x86
+clone_folder: C:\projects\contexts
+
+environment:
+    matrix:
+        - PHP_DOWNLOAD_FILE: php-5.4.44-nts-Win32-VC9-x86.zip
+        - PHP_DOWNLOAD_FILE: php-5.5.35-nts-Win32-VC11-x86.zip
+        - PHP_DOWNLOAD_FILE: php-5.6.21-nts-Win32-VC11-x86.zip
+        - PHP_DOWNLOAD_FILE: php-7.0.6-nts-Win32-VC14-x86.zip
+
+cache:
+    - c:\php -> appveyor.yml
+    - '%LOCALAPPDATA%\Composer'
+
+init:
+    - git config --global core.autocrlf true
+    - SET PATH=C:\php;%PATH%
+    - SET COMPOSER_NO_INTERACTION=1
+    - SET PHP=1
+
+install:
+    - ps: iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-desktop.ps1'))
+    - IF EXIST c:\php (SET PHP=0) ELSE (mkdir c:\php)
+    - cd c:\php
+    - IF %PHP%==1 appveyor DownloadFile http://windows.php.net/downloads/releases/archives/%PHP_DOWNLOAD_FILE%
+    - IF %PHP%==1 7z x %PHP_DOWNLOAD_FILE% -y > 7z.log
+    - IF %PHP%==1 echo @php %%~dp0composer.phar %%* > composer.bat
+    - appveyor DownloadFile https://getcomposer.org/composer.phar
+    - copy php.ini-production php.ini /Y
+    - echo date.timezone="Europe/Paris" >> php.ini
+    - echo extension_dir=ext >> php.ini
+    - echo extension=php_openssl.dll >> php.ini
+    - echo extension=php_curl.dll >> php.ini
+    - echo extension=php_mbstring.dll >> php.ini
+    - echo extension=php_fileinfo.dll >> php.ini
+    - appveyor DownloadFile https://getcomposer.org/composer.phar
+    - cd %APPVEYOR_BUILD_FOLDER%
+    - appveyor DownloadFile http://selenium-release.storage.googleapis.com/2.48/selenium-server-standalone-2.48.2.jar
+    - copy behat.yml-dist behat.yml
+    - netsh advfirewall firewall add rule name="SeleniumIn" dir=in action=allow protocol=TCP localport=4444
+    - netsh advfirewall firewall add rule name="SeleniumOut" dir=out action=allow protocol=TCP localport=4444
+    - netsh advfirewall firewall add rule name="PHPIn" dir=in action=allow protocol=TCP localport=8000
+    - netsh advfirewall firewall add rule name="PHPOut" dir=out action=allow protocol=TCP localport=8000
+    - ps: $SeleniumProcess = Start-Process java "-jar", "selenium-server-standalone-2.48.2.jar", "-Djna.nosys=true"
+    - ps: $PhpProcess = Start-Process php "-S", "localhost:8000", "-t", "tests/fixtures/"
+    - php c:\php\composer.phar install
+
+test_script:
+    - cd %APPVEYOR_BUILD_FOLDER%
+    - bin\behat.bat -fprogress
+
+on_finish:
+    - ps: Stop-Process -Id $PhpProcess
+    - ps: Stop-Process -Id $SeleniumProcess
