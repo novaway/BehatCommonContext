@@ -19,7 +19,7 @@ The extension requires :
 Add dependencies with Composer :
 
 ``` bash
-$ php composer.phar require novaway/common-contexts "~2.0"
+$ php composer.phar require --dev novaway/common-contexts "~2.0"
 ```
 
 In `behat.yml`, enable desired contexts:
