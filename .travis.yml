@@ -15,7 +15,9 @@ matrix:
 before_script:
     - export DISPLAY=:99.0
     - Xvfb $DISPLAY -extension RANDR &> /dev/null &
-    - curl http://selenium-release.storage.googleapis.com/2.48/selenium-server-standalone-2.48.2.jar > selenium.jar
+    - curl http://selenium-release.storage.googleapis.com/3.5/selenium-server-standalone-3.5.3.jar > selenium.jar
+    - curl https://chromedriver.storage.googleapis.com/2.32/chromedriver_linux64.zip > chromedriver.zip
+    - unzip chromedriver.zip
     - java -jar selenium.jar &> /dev/null &
     - php -S localhost:8000 -t tests/fixtures/ &> /dev/null &
     - cp behat.yml{-dist,}

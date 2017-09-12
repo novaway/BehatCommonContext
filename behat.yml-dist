@@ -12,6 +12,7 @@ default:
     extensions:
         Behat\MinkExtension\ServiceContainer\MinkExtension:
             base_url:   http://localhost:8000
+            browser_name: 'chrome'
             goutte:     ~
             selenium2:  ~
         Novaway\CommonContexts\Extension: ~
