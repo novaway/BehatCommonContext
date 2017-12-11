@@ -14,5 +14,12 @@ default:
             base_url:   http://localhost:8000
             browser_name: 'chrome'
             goutte:     ~
-            selenium2:  ~
+            selenium2:
+                capabilities:
+                    marionette: null
+                    chrome:
+                        switches:
+                            - "--disable-gpu"
+                            - "--headless"
+
         Novaway\CommonContexts\Extension: ~
