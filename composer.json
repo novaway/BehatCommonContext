@@ -1,7 +1,7 @@
 {
     "name": "novaway/common-contexts",
     "description": "Novaway Behat common contexts",
-    "keywords": ["BDD", "Behat", "Symfony2", "Context"],
+    "keywords": ["BDD", "Behat", "Symfony", "Context", "Select2"],
     "type": "library",
     "license": "MIT",
     "authors": [
