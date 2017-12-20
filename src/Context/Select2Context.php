@@ -97,6 +97,9 @@ class Select2Context extends BaseContext
      */
     private function openField(DocumentElement $page, $field)
     {
+        // force select2 to be closed
+        $page->find('css', 'body')->press();
+
         $fieldName = sprintf('select[name="%s"] + .select2-container', $field);
 
         $inputField = $page->find('css', $fieldName);

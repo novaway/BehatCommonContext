@@ -56,3 +56,12 @@ Feature: Select2 Feature
     Scenario:
         Given I am on "/select2-ajax.html"
         Then I fill in select2 "select_number" with "France" and wait 6 seconds until results are loaded
+
+    @javascript
+    Scenario: Test fill select2 if list already open
+        Given I am on "/select2.html"
+        When I fill in select2 input "select_number" with "F"
+        Then I should see 2 choice in select2 "select_number"
+
+        When I fill in select2 input "select_number" with "F"
+        Then I fill in select2 "select_number" with "Four"
